@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="minhaDiv">
+        <!-- Shift+Alt+F -->
+
+    </div>
+
+    <script>
+        var elementoLink = document.createElement('a')
+        elementoLink.setAttribute('class', 'link')
+        elementoLink.setAttribute('href', 'http://google.com.br')
+
+        var filhoTextElemento = document.createTextNode('Link para google')
+        elementoLink.appendChild(filhoTextElemento)
+
+        var conteudo = document.querySelector("#minhaDiv")
+        conteudo.appendChild(elementoLink)
+
+    </script>
+</body>
+
+</html>

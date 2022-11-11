@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8"> <!-- FAZ COM QUE PEGA AS LETRAS COM ACENTO E Ç -->
+    <title> Pagina do curso </title> <!-- TITULO -->
+    <link rel = "stylesheet" href = "Estilo.css">
+
+    <style>
+        body{
+            background:rgb(149, 215, 220);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <header> <!-- CABEÇALHO -->
+            <h1 class = "principal" > Exercícios Prátricos de HTML </h1>
+        </header>
+        <br>
+        <br>
+        <nav> <!-- NAVEGAÇÃO -->
+
+            <a href="ExemploHTML/Cabeçalho.html">Exemplos Cabeçalho: </a>
+            <br>
+            <a href="ExemploHTML/tagTexto.html">Tag Texto: </a>
+            <br>
+            <a href="ExemploHTML/Lista.html">Lista: </a>
+            <br>  
+            <a href="ExemploHTML/Link.html" target="blank">Entrar: </a> <!-- Abrir uma nova pagina -->
+            <br>
+            <a href="ExemploHTML/Tabela.html">Tabela: </a> 
+            <br>
+            <a href="ExemploHTML/naoVisual.html">Não Visual: </a>
+            <br>
+            <a href="Formulario/Fomulario.html">Formulario: </a>
+            <br>
+            
+
+        </nav>
+
+        <section id = "conteudo">            
+            
+        </section> <!-- SELEÇÃO -->
+
+        <script>     
+              
+            document.querySelectorAll('a').forEach(link => { // selecionar todas as tag 'h1'
+            console.log(link); //imprimir o retorno;
+              
+            const conteudo = document.getElementById('conteudo') //obter a sction conteúdo
+                    
+            link.onclick = function(e){
+            console.log('Deu certo^^')
+            e.preventDefault() //previnir que a navegação ocorra
+            fetch(link.href) // devolveo o retorno do click - promisse 
+            .then(resp => resp.text()) // armazena o object
+            .then(html => conteudo.innerHTML = html) // chamada AJAX para o link que clicou
+             
+                } 
+            })
+        </script>
+
+        <footer> <!-- RODAPÉ -->
+            <br>
+           <font color = "red" > Página da disciplina de programação III </font>
+        </footer>
+
+    </center>
+</body>
+
+</html>

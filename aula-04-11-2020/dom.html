@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="minhaDiv">
+        <input type="text" name="nome1" id = "entradaTexto1" class="botao">
+        <br><br>
+        <button class="botao1"> Pressionar1 </button>
+        <br><br>
+        <input type="text" name="nome2" id = "entradaTexto2">
+        <br><br>
+        <button class="botao2"> Pressionar2 </button>
+    </div>
+    <script>
+        var inputElemneto = document.getElementById("entradaTexto1")
+        console.log(inputElemneto)
+
+        inputElemneto.onclick = function(){
+            alert("Cliquei com Touchpad aqui")
+        }
+
+        var inputTag = document.getElementsByTagName("input")
+        console.log(inputTag)
+        console.log(inputTag[0])
+
+        var elementoClasse = document.getElementsByClassName("botao")
+        console.log(elementoClasse)
+        console.log(elementoClasse[0])
+
+        var query1 = document.querySelector('div#minhaDiv input.botao');
+        //console.log('Query1: ', query1)
+
+        var query2 = document.querySelectorAll('input');
+        //console.log('Query2: ', query2)
+
+        var butao1 = document.querySelector('div#minhaDiv button.botao1')
+        function alerta(){
+            var texto = inputTag[0].value
+            alert(texto)
+        }
+
+        butao1.onclick = alerta
+
+    </script>
+        
+</body>
+</html>
